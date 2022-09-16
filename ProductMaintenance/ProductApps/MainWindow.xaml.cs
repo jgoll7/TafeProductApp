@@ -22,6 +22,7 @@ namespace ProductApps
     {
         const int CHARGE = 25;
         const int WRAP = 5;
+        const decimal GST = 1.1M;
         Product cProduct;
 
         public MainWindow()
@@ -38,7 +39,8 @@ namespace ProductApps
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + CHARGE);
                 totalWrapTextBlock.Text = Convert.ToString(cProduct.TotalPayment + CHARGE + WRAP);
-              
+                totalGSTTextBlock.Text = Convert.ToString((cProduct.TotalPayment + CHARGE + WRAP) * GST);
+
             }
             catch (FormatException)
             {
